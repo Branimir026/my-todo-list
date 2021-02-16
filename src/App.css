@@ -25,15 +25,15 @@ form {
 }
 
 .todo-input,
-.todo-button{
+.todo-button {
   height: 30px;
 }
 
-.todo-input{
+.todo-input {
   width: 600px;
 }
 
-.todo-button{
+.todo-button {
   width: 100px;
   background-color: dimgray;
   color: white;
