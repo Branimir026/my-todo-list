@@ -10,6 +10,15 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let localTodos = JSON.parse(localStorage.getItem("todos"));
+      setTodos(localTodos);
+    }
+  }, []); //this useEffect runs only once because of empty array as dependancy
+
+  useEffect(() => {
     switch (filterStatus) {
       case "Completed":
         setFilteredTodos(todos.filter((todo) => todo.isCompleted === true));
@@ -20,7 +29,8 @@ function App() {
       default:
         setFilteredTodos(todos);
     }
-  }, [filterStatus, todos]);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [filterStatus, todos]); //this useEffect runs once after render, and every time filterStatus or todos change
 
   return (
     <div className="container">
