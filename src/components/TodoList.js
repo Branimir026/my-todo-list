@@ -16,6 +16,10 @@ function TodoList({ todos, setTodos }) {
     );
   };
 
+  const isDeletedHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="todo-container">
       <ul className="todo-list">
@@ -25,6 +29,7 @@ function TodoList({ todos, setTodos }) {
             key={todo.id}
             isCompleted={todo.isCompleted}
             isCompletedHandler={() => isCompletedHandler(todo.id)}
+            isDeletedHandler={() => isDeletedHandler(todo.id)}
           />
         ))}
       </ul>

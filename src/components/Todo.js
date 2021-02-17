@@ -1,11 +1,11 @@
 import React from "react";
 
-function Todo({ text, isCompleted, isCompletedHandler }) {
+function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
   return (
     <li className={`todo-item ${isCompleted ? "completed" : ""}`}>
       <div>
         <span>{text}</span>
-        <button>Delete</button>
+        <button onClick={isDeletedHandler}>Delete</button>
         <input
           value={isCompleted}
           onChange={isCompletedHandler}
