@@ -1,7 +1,14 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function Form({ inputText, setInputText, todos, setTodos }) {
+function Form({
+  inputText,
+  setInputText,
+  todos,
+  setTodos,
+  setFilterStatus,
+  filterStatus,
+}) {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
@@ -12,9 +19,14 @@ function Form({ inputText, setInputText, todos, setTodos }) {
     setInputText("");
   };
 
+  const filterStatusHandler = (e) => {
+    setFilterStatus(e.target.value);
+  };
+
   const test = (e) => {
     e.preventDefault();
     console.log(todos);
+    console.log(filterStatus);
   };
 
   return (
@@ -32,6 +44,11 @@ function Form({ inputText, setInputText, todos, setTodos }) {
       >
         Dodaj
       </button>
+      <select onChange={filterStatusHandler} name="filter">
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Uncompleted">Uncompleted</option>
+      </select>
       <button onClick={test} className="todo-button" type="submit">
         test
       </button>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
@@ -6,6 +6,21 @@ import TodoList from "./components/TodoList";
 function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [filterStatus, setFilterStatus] = useState("All");
+  const [filteredTodos, setFilteredTodos] = useState([]);
+
+  useEffect(() => {
+    switch (filterStatus) {
+      case "Completed":
+        setFilteredTodos(todos.filter((todo) => todo.isCompleted === true));
+        break;
+      case "Uncompleted":
+        setFilteredTodos(todos.filter((todo) => todo.isCompleted === false));
+        break;
+      default:
+        setFilteredTodos(todos);
+    }
+  }, [filterStatus, todos]);
 
   return (
     <div className="container">
@@ -17,8 +32,14 @@ function App() {
         setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
+        setFilterStatus={setFilterStatus}
+        filterStatus={filterStatus}
       />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList
+        todos={todos}
+        setTodos={setTodos}
+        filteredTodos={filteredTodos}
+      />
     </div>
   );
 }

@@ -7,7 +7,7 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
         <span>{text}</span>
         <button onClick={isDeletedHandler}>Delete</button>
         <input
-          value={isCompleted}
+          defaultChecked={isCompleted}
           onChange={isCompletedHandler}
           type="checkbox"
         ></input>
