@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function TodoList({ todos, setTodos, filteredTodos }) {
   const isCompletedHandler = (id) => {
@@ -22,7 +23,8 @@ function TodoList({ todos, setTodos, filteredTodos }) {
 
   return (
     <div className="todo-container">
-      <ul className="todo-list">
+      {/*<ul className="todo-list">*/}
+      <ListGroup>
         {filteredTodos.map((todo) => (
           <Todo
             text={todo.text}
@@ -32,7 +34,8 @@ function TodoList({ todos, setTodos, filteredTodos }) {
             isDeletedHandler={() => isDeletedHandler(todo.id)}
           />
         ))}
-      </ul>
+        {/*</ul>*/}
+      </ListGroup>
     </div>
   );
 }

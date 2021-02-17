@@ -1,5 +1,10 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
+import Button from "react-bootstrap/Button";
 
 function Form({
   inputText,
@@ -20,7 +25,7 @@ function Form({
   };
 
   const filterStatusHandler = (e) => {
-    setFilterStatus(e.target.value);
+    setFilterStatus(e);
   };
 
   const test = (e) => {
@@ -30,7 +35,39 @@ function Form({
   };
 
   return (
-    <form>
+    <div className="container">
+      <InputGroup>
+        <FormControl
+          placeholder="Enter some task..."
+          aria-label="Enter some task..."
+          aria-describedby="basic-addon2"
+          value={inputText}
+          onChange={inputTextHandler}
+        />
+
+        <Button
+          variant="outline-secondary"
+          onClick={submitTodosHandler}
+          type="submit"
+        >
+          Add task
+        </Button>
+
+        <DropdownButton
+          as={InputGroup.Append}
+          variant="outline-secondary"
+          title={filterStatus}
+          id="input-group-dropdown-2"
+          onSelect={filterStatusHandler}
+        >
+          <Dropdown.Item eventKey="All">All</Dropdown.Item>
+          <Dropdown.Item eventKey="Completed">Completed</Dropdown.Item>
+          <Dropdown.Item eventKey="Uncompleted">Uncompleted</Dropdown.Item>
+        </DropdownButton>
+      </InputGroup>
+    </div>
+
+    /**<form>
       <input
         value={inputText}
         onChange={inputTextHandler}
@@ -52,7 +89,7 @@ function Form({
       <button onClick={test} className="todo-button" type="submit">
         test
       </button>
-    </form>
+    </form>*/
   );
 }
 
