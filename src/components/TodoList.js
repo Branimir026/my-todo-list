@@ -22,21 +22,18 @@ function TodoList({ todos, setTodos, filteredTodos }) {
   };
 
   return (
-    <div className="todo-container">
-      {/*<ul className="todo-list">*/}
-      <ListGroup>
-        {filteredTodos.map((todo) => (
-          <Todo
-            text={todo.text}
-            key={todo.id}
-            isCompleted={todo.isCompleted}
-            isCompletedHandler={() => isCompletedHandler(todo.id)}
-            isDeletedHandler={() => isDeletedHandler(todo.id)}
-          />
-        ))}
-        {/*</ul>*/}
-      </ListGroup>
-    </div>
+    <ListGroup className="todo-list-container">
+      {filteredTodos.map((todo) => (
+        <Todo
+          text={todo.text}
+          key={todo.id}
+          isCompleted={todo.isCompleted}
+          isCompletedHandler={() => isCompletedHandler(todo.id)}
+          isDeletedHandler={() => isDeletedHandler(todo.id)}
+        />
+      ))}
+      {/*</ul>*/}
+    </ListGroup>
   );
 }
 

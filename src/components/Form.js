@@ -35,37 +35,44 @@ function Form({
   };
 
   return (
-    <div className="container">
-      <InputGroup>
-        <FormControl
-          placeholder="Enter some task..."
-          aria-label="Enter some task..."
-          aria-describedby="basic-addon2"
-          value={inputText}
-          onChange={inputTextHandler}
-        />
+    <InputGroup className="form-container">
+      <FormControl
+        placeholder="Enter some task..."
+        aria-label="Enter some task..."
+        aria-describedby="basic-addon2"
+        value={inputText}
+        onChange={inputTextHandler}
+        className="form-input"
+      />
 
-        <Button
-          variant="outline-secondary"
-          onClick={submitTodosHandler}
-          type="submit"
-        >
-          Add task
-        </Button>
+      <Button
+        variant="primary"
+        onClick={submitTodosHandler}
+        type="submit"
+        className="form-button"
+      >
+        <span>Add task</span>
+      </Button>
 
-        <DropdownButton
-          as={InputGroup.Append}
-          variant="outline-secondary"
-          title={filterStatus}
-          id="input-group-dropdown-2"
-          onSelect={filterStatusHandler}
-        >
-          <Dropdown.Item eventKey="All">All</Dropdown.Item>
-          <Dropdown.Item eventKey="Completed">Completed</Dropdown.Item>
-          <Dropdown.Item eventKey="Uncompleted">Uncompleted</Dropdown.Item>
-        </DropdownButton>
-      </InputGroup>
-    </div>
+      <DropdownButton
+        as={InputGroup.Append}
+        variant="info"
+        title={filterStatus}
+        id="input-group-dropdown-2"
+        onSelect={filterStatusHandler}
+        className="form-dropdown"
+      >
+        <Dropdown.Item eventKey="All">
+          <span>All</span>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="Completed">
+          <span>Completed</span>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="Uncompleted">
+          <span>Uncompleted</span>
+        </Dropdown.Item>
+      </DropdownButton>
+    </InputGroup>
 
     /**<form>
       <input
