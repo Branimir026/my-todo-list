@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
+//importing bootstrap components
 import ListGroup from "react-bootstrap/ListGroup";
 
 function TodoList({ todos, setTodos, filteredTodos }) {
@@ -22,7 +23,7 @@ function TodoList({ todos, setTodos, filteredTodos }) {
   };
 
   return (
-    <ListGroup className="todo-list-container">
+    <ListGroup className="todoListContainer">
       {filteredTodos.map((todo) => (
         <Todo
           text={todo.text}
@@ -32,7 +33,6 @@ function TodoList({ todos, setTodos, filteredTodos }) {
           isDeletedHandler={() => isDeletedHandler(todo.id)}
         />
       ))}
-      {/*</ul>*/}
     </ListGroup>
   );
 }
