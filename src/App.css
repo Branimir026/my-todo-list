@@ -49,7 +49,6 @@ h1 {
 }
 
 .todoItem {
-  background-color: white;
   margin-bottom: 5px !important;
   margin-right: 0px !important;
 }
@@ -66,4 +65,5 @@ h1 {
 
 .completed {
   text-decoration: line-through;
+  opacity: 0.5;
 }
