@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
   return (
     <Row className="todoContainer">
-      <Col lg={9} xs={10}>
+      <Col lg={9} xs={12}>
         <Alert
           variant="dark"
           className={`todoItem ${isCompleted ? "completed" : ""}`}
@@ -18,7 +18,7 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           {text}
         </Alert>
       </Col>
-      <Col lg={1} xs={2} className="checkboxDiv">
+      <Col lg={1} xs={3} className="checkboxDiv">
         <ToggleButton
           type="checkbox"
           variant="success"
@@ -28,7 +28,7 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           className="todoCheckbox"
         />
       </Col>
-      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 6, offset: 2 }}>
+      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 4, offset: 5 }}>
         <Button
           variant="danger"
           onClick={isDeletedHandler}

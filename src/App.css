@@ -29,6 +29,15 @@ h1 {
   background-color: rgba(245, 222, 179, 0.274);
   box-shadow: 5px 5px rgba(223, 197, 151, 0.274);
 }
+
+.formInput {
+  margin-bottom: 5px;
+}
+
+.formButton,
+.formDropdown > .dropdown-toggle {
+  width: 100%;
+}
 .todoContainer {
   display: flex;
   align-items: center;
@@ -40,6 +49,7 @@ h1 {
 }
 
 .todoItem {
+  background-color: white;
   margin-bottom: 5px !important;
   margin-right: 0px !important;
 }
@@ -52,10 +62,6 @@ h1 {
 }
 .todoListContainer {
   margin-bottom: 20px;
-}
-
-.checkboxDiv {
-  padding-left: 0px !important;
 }
 
 .completed {
