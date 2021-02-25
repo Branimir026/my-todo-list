@@ -6,7 +6,6 @@ import FormControl from "react-bootstrap/FormControl";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function Form({
@@ -23,18 +22,17 @@ function Form({
 
   const submitTodosHandler = (e) => {
     e.preventDefault();
-    setTodos([...todos, { text: inputText, isCompleted: false, id: uuidv4() }]);
-    setInputText("");
+    if (inputText !== "") {
+      setTodos([
+        ...todos,
+        { text: inputText, isCompleted: false, id: uuidv4() },
+      ]);
+      setInputText("");
+    }
   };
 
   const filterStatusHandler = (e) => {
     setFilterStatus(e);
-  };
-
-  const test = (e) => {
-    e.preventDefault();
-    console.log(todos);
-    console.log(filterStatus);
   };
 
   return (
