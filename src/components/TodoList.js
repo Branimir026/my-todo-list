@@ -23,7 +23,7 @@ function TodoList({ todos, setTodos, filteredTodos }) {
   };
 
   return (
-    <ListGroup className="todoListContainer">
+    <ListGroup>
       {filteredTodos.map((todo) => (
         <Todo
           text={todo.text}

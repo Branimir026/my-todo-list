@@ -1,15 +1,14 @@
 import React from "react";
 //importing bootstrap components
-import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import Alert from "react-bootstrap/Alert";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { ListGroupItem } from "react-bootstrap";
 
 function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
   return (
-    <Row className="todoContainer">
+    <ListGroupItem>
       <Col lg={9} xs={12}>
         <Alert
           variant="dark"
@@ -18,7 +17,11 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           {text}
         </Alert>
       </Col>
-      <Col lg={1} xs={3} className="checkboxDiv">
+      <Col
+        lg={{ span: 1, offset: 0 }}
+        xs={{ span: 3, offset: 3 }}
+        className="checkboxDiv"
+      >
         <ToggleButton
           type="checkbox"
           variant="success"
@@ -28,7 +31,7 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           className="todoCheckbox"
         />
       </Col>
-      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 4, offset: 5 }}>
+      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 4, offset: 0 }}>
         <Button
           variant="danger"
           onClick={isDeletedHandler}
@@ -37,7 +40,7 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           Delete
         </Button>
       </Col>
-    </Row>
+    </ListGroupItem>
   );
 }
 

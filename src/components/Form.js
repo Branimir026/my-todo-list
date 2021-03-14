@@ -36,8 +36,8 @@ function Form({
   };
 
   return (
-    <InputGroup className="formContainer">
-      <Col lg={{ span: 8, offset: 1 }} xs={12}>
+    <InputGroup>
+      <Col lg={9} xs={12}>
         <FormControl
           placeholder="Enter some task..."
           aria-label="Enter some task..."
