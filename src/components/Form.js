@@ -20,7 +20,7 @@ function Form({
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && inputText !== "") {
       setTodos([
         ...todos,
         { text: inputText, isCompleted: false, id: uuidv4() },
