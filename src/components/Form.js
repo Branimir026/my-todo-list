@@ -5,7 +5,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
 function Form({
@@ -20,9 +19,8 @@ function Form({
     setInputText(e.target.value);
   };
 
-  const submitTodosHandler = (e) => {
-    e.preventDefault();
-    if (inputText !== "") {
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
       setTodos([
         ...todos,
         { text: inputText, isCompleted: false, id: uuidv4() },
@@ -37,25 +35,16 @@ function Form({
 
   return (
     <InputGroup>
-      <Col lg={9} xs={12}>
+      <Col lg={10} xs={12}>
         <FormControl
           placeholder="Enter some task..."
           aria-label="Enter some task..."
           aria-describedby="basic-addon2"
           value={inputText}
           onChange={inputTextHandler}
+          onKeyPress={handleKeyPress}
           className="formInput"
         />
-      </Col>
-      <Col lg={1} xs={4}>
-        <Button
-          variant="primary"
-          onClick={submitTodosHandler}
-          type="submit"
-          className="formButton"
-        >
-          <span>Add</span>
-        </Button>
       </Col>
       <Col lg={{ span: 2, offset: 0 }} xs={{ span: 6, offset: 2 }}>
         <DropdownButton
