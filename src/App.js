@@ -51,13 +51,15 @@ function App() {
           filterStatus={filterStatus}
         />
       </Row>
-      <Row className="todoListContainer">
-        <TodoList
-          todos={todos}
-          setTodos={setTodos}
-          filteredTodos={filteredTodos}
-        />
-      </Row>
+      {todos.length > 0 && (
+        <Row className="todoListContainer">
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            filteredTodos={filteredTodos}
+          />
+        </Row>
+      )}
     </Container>
   );
 }
