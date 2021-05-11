@@ -10,7 +10,6 @@
     "bootstrap": "^4.6.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.0",
     "react-dom": "^17.0.1",
@@ -45,6 +44,10 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "gh-pages": "^3.1.0"
+=======
+    "prettier": "^2.3.0"
+>>>>>>> 873be6d0c38a57ab62e3a7e47272b27762db0258
   }
 }
