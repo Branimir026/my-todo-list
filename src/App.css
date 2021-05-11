@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(30deg, #636262 0%, #b9b9b9 100%);
+  background-image: linear-gradient(30deg, #393e46 0%, #4e5663 100%);
   color: white;
   min-height: 100vh;
 }
@@ -17,11 +17,14 @@ h1 {
 .headingContainer {
   margin: 10vh 0vw 10vh 0vw;
   text-align: center;
+  color: #ffffff;
 }
 
 .formContainer {
   height: 50px;
   margin-bottom: 50px;
+  padding-left: 4vw;
+  padding-right: 4vw;
 }
 
 .formInput,
@@ -45,7 +48,12 @@ h1 {
 }
 
 .todoListContainer {
-  margin-bottom: 100px !important;
+  margin-bottom: 3vh !important;
+  padding: 3vh 4vw 3vh 4vw;
+  background-color: #aad8d3;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #4d6d69, -10px -10px 10px #4d6d69,
+    10px -10px 10px #4d6d69, -10px 10px 10px #4d6d69;
 }
 
 .list-group {
@@ -56,6 +64,12 @@ h1 {
   display: flex !important;
   flex-wrap: wrap;
   align-items: baseline;
+  margin-bottom: 5px;
+  background-color: #00adb5 !important;
+}
+
+.todoItem {
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 

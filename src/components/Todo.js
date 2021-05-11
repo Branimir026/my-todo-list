@@ -5,11 +5,12 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import { ListGroupItem } from "react-bootstrap";
+import { Trash } from "react-bootstrap-icons";
 
 function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
   return (
     <ListGroupItem>
-      <Col lg={9} xs={12}>
+      <Col lg={10} xs={12}>
         <Alert
           variant="dark"
           className={`todoItem ${isCompleted ? "completed" : ""}`}
@@ -31,13 +32,13 @@ function Todo({ text, isCompleted, isCompletedHandler, isDeletedHandler }) {
           className="todoCheckbox"
         />
       </Col>
-      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 4, offset: 0 }}>
+      <Col lg={{ span: 1, offset: 0 }} xs={{ span: 3, offset: 0 }}>
         <Button
           variant="danger"
           onClick={isDeletedHandler}
           className="todoDelete"
         >
-          Delete
+          <Trash />
         </Button>
       </Col>
     </ListGroupItem>
