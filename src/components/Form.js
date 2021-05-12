@@ -46,7 +46,7 @@ function Form({
           className="formInput"
         />
       </Col>
-      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 6, offset: 2 }}>
+      <Col lg={{ span: 2, offset: 0 }} xs={{ span: 6, offset: 3 }}>
         <DropdownButton
           as={InputGroup.Append}
           variant="info"
