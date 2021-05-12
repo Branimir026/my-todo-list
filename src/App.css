@@ -5,8 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(30deg, #393e46 0%, #4e5663 100%);
-  color: white;
+  background-color: #b8b8b8 !important;
   min-height: 100vh;
 }
 
@@ -17,7 +16,7 @@ h1 {
 .headingContainer {
   margin: 10vh 0vw 10vh 0vw;
   text-align: center;
-  color: #ffffff;
+  color: #474747;
 }
 
 .formContainer {
@@ -50,10 +49,6 @@ h1 {
 .todoListContainer {
   margin-bottom: 3vh !important;
   padding: 3vh 4vw 3vh 4vw;
-  background-color: #aad8d3;
-  border-radius: 5px;
-  box-shadow: 10px 10px 10px #4d6d69, -10px -10px 10px #4d6d69,
-    10px -10px 10px #4d6d69, -10px 10px 10px #4d6d69;
 }
 
 .list-group {
@@ -65,15 +60,32 @@ h1 {
   flex-wrap: wrap;
   align-items: baseline;
   margin-bottom: 5px;
-  background-color: #00adb5 !important;
+  box-shadow: 3px 3px #cccccc;
 }
 
 .todoItem {
   margin-top: 10px;
   margin-bottom: 5px;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-radius: 0px !important;
+  border-bottom: 2px solid #b96606 !important;
 }
 
 .completed {
   text-decoration: line-through;
+  text-decoration-color: #07920e;
+  text-decoration-thickness: 3px;
   opacity: 0.5;
+  border-bottom: 2px solid #07920e !important;
+}
+
+.noTodos {
+  width: 100%;
+  text-align: center;
+  color: #b96606;
+}
+
+.noTodosFilter {
+  font-weight: bold;
 }
