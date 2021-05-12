@@ -51,7 +51,7 @@ function App() {
           filterStatus={filterStatus}
         />
       </Row>
-      {filteredTodos.length > 0 && (
+      {filteredTodos.length > 0 ? (
         <Row className="todoListContainer">
           <TodoList
             todos={todos}
@@ -59,6 +59,11 @@ function App() {
             filteredTodos={filteredTodos}
           />
         </Row>
+      ) : (
+        <h4 class="noTodos">
+          There are no todos for filter:{" "}
+          <span class="noTodosFilter">{filterStatus}</span>
+        </h4>
       )}
     </Container>
   );
