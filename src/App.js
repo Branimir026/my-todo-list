@@ -60,9 +60,9 @@ function App() {
           />
         </Row>
       ) : (
-        <h4 class="noTodos">
+        <h4 className="noTodos">
           There are no todos for filter:{" "}
-          <span class="noTodosFilter">{filterStatus}</span>
+          <span className="noTodosFilter">{filterStatus}</span>
         </h4>
       )}
     </Container>
