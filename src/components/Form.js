@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 //importing bootstrap components
 import InputGroup from "react-bootstrap/InputGroup";
@@ -7,14 +7,9 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Col from "react-bootstrap/Col";
 
-function Form({
-  inputText,
-  setInputText,
-  todos,
-  setTodos,
-  setFilterStatus,
-  filterStatus,
-}) {
+function Form({ todos, setTodos, setFilterStatus, filterStatus }) {
+  const [inputText, setInputText] = useState("");
+
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };

@@ -8,7 +8,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 function App() {
-  const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [filterStatus, setFilterStatus] = useState("All");
   const [filteredTodos, setFilteredTodos] = useState([]);
@@ -43,8 +42,6 @@ function App() {
       </Row>
       <Row className="formContainer">
         <Form
-          inputText={inputText}
-          setInputText={setInputText}
           todos={todos}
           setTodos={setTodos}
           setFilterStatus={setFilterStatus}
